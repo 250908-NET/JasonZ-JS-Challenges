@@ -1,4 +1,4 @@
-async function loadPosts() {
+async function _loadPosts() {
   let posts = await fetch("https://jsonplaceholder.typicode.com/posts").then(
     (res) => res.json()
   );
@@ -10,4 +10,18 @@ async function loadPosts() {
   });
 }
 
-document.getElementById("loadBtn").addEventListener("click", loadPosts);
+async function loadPost(id) {
+  let post = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`).then(
+    (res) => res.json()
+  );
+
+  const postDiv = document.createElement("div");
+  postDiv.innerHTML = `<h3>${post.title}</h3><p>${post.body}</p>`;
+  document.getElementById("output").appendChild(postDiv);
+}
+
+document.getElementById("loadBtn").addEventListener("click", () => {
+  const id = document.getElementById("idInput").value || 1;
+  document.getElementById("output").innerHTML = "";
+  loadPost(id);
+});
