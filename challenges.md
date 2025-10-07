@@ -731,7 +731,7 @@ They were introduced in **ES6 (ECMAScript 2015)** and are often used for cleaner
 function greet(name) {
   return `Hello, ${name}!`;
 }
-````
+```
 
 ### Equivalent Arrow Function
 
