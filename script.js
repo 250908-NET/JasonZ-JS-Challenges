@@ -24,3 +24,5 @@ clearButton.addEventListener("click", function() {
     list.removeChild(doneItems[0]);
   }
 });
+
+const _square = n => n * n;
