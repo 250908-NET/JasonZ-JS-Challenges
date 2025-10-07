@@ -1,28 +1,47 @@
-function greetUser() {
-  let name = document.getElementById("nameInput").value.trim();
-  let color = document.getElementById("colorInput").value.trim();
-
-  if (name === "") {
-    alert("Please enter your name first!");
-  } 
-
-  switch (color.toLowerCase()) {
-    case "red":
-      alert("Hello, " + name + "! Red is a great color.");
-      break;
-    case "blue":
-      alert("Hello, " + name + "! Blue is nice, but it's just... so blasé.");
-      break;
-    case "green":
-      alert("Hello, " + name + "! Green is pretty cringe ngl.");
-      break;
-    case "fuchsia":
-      alert("Hello, " + name + "! That is not your favorite color.");
-      break;
+function calculate(a, b, operator) {
+  switch (operator.trim()) {
+    case "+":
+      return a + b;
+    case "-":
+      return a - b;
+    case "*":
+      return a * b;
+    case "/":
+      return a / b;
     default:
-      alert("Hello, " + name + "! Your favorite color is " + color + ".");
-      break;
+      return "Invalid operator";
   }
 }
 
-document.getElementById("greetBtn").addEventListener("click", greetUser);
+function add() {
+  const num1 = parseFloat(document.getElementById("num1").value);
+  const num2 = parseFloat(document.getElementById("num2").value);
+  const result = calculate(num1, num2, "+");
+  document.getElementById("result").textContent = `Result: ${result}`;
+}
+
+function subtract() {
+  const num1 = parseFloat(document.getElementById("num1").value);
+  const num2 = parseFloat(document.getElementById("num2").value);
+  const result = calculate(num1, num2, "-");
+  document.getElementById("result").textContent = `Result: ${result}`;
+}
+
+function multiply() {
+  const num1 = parseFloat(document.getElementById("num1").value);
+  const num2 = parseFloat(document.getElementById("num2").value);
+  const result = calculate(num1, num2, "*");
+  document.getElementById("result").textContent = `Result: ${result}`;
+}
+
+function divide() {
+  const num1 = parseFloat(document.getElementById("num1").value);
+  const num2 = parseFloat(document.getElementById("num2").value);
+  const result = calculate(num1, num2, "/");
+  document.getElementById("result").textContent = `Result: ${result}`;
+}
+
+document.getElementById("addBtn").addEventListener("click", add);
+document.getElementById("subtractBtn").addEventListener("click", subtract);
+document.getElementById("multiplyBtn").addEventListener("click", multiply);
+document.getElementById("divideBtn").addEventListener("click", divide);
