@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JS Button Example</title>
+    <title>Greeting Input</title>
   </head>
   <body>
-    <h1>Click the Button!</h1>
-
-    <button onclick="sayHello()">Say Hello</button>
-
-    <script>
-      function sayHello() {
-        alert("Hello from JavaScript!");
-      }
-    </script>
-
-    <button onclick="awawa()">awawa</button>
+    <h2>Enter your name:</h2>
+    <input type="text" id="nameInput" placeholder="Your name here">
+    <button onclick="greetUser()">Greet Me</button>
 
     <script>
-      function awawa() {
-        alert("awawa");
+      function greetUser() {
+        let name = document.getElementById("nameInput").value.trim();
+
+        if (name === "") {
+          alert("Please enter your name first!");
+        } else {
+          alert("Hello, " + name + "!");
+        }
       }
     </script>
   </body>
