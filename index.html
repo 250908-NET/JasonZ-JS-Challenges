@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>I forgor</title>
+    <title>External Script Example</title>
   </head>
   <body>
-    <h2>Enter a number:</h2>
-    <input type="number" id="numInput" placeholder="Insert number here">
-    <button onclick="square()">^2</button>
+    <h1>External JavaScript Demo</h1>
+    <p>Open the console to see the message.</p>
 
-    <script>
-      function square() {
-        let x = document.getElementById("numInput").value.trim();
-        let x2 = x * x;
-
-        alert(`${x}^2 = ${x2}`);
-
-        document.getElementById("numInput").value = x2;
-      }
-    </script>
+    <!-- Link the external script file -->
+    <script src="script.js"></script>
   </body>
 </html>
