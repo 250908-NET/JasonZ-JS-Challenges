@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AWFDGFDGA</title>
+    <title>To-Do List</title>
+    <style>
+      .done {
+        text-decoration: line-through;
+        color: gray;
+      }
+    </style>
   </head>
   <body>
-    <style>
-        .dark-mode {
-            background-color: #1e1e1e;
-            color: lightgrey;
-        }
-    </style>
-
-    <h1>Top Text</h1>
-
-    <img id="bloopy" src="bloopySmug.png" alt="bloopy">
-
-    <button id="switchButton">↔</button>
-    <button id="colorButton">:|</button>
+    <h1>My To-Do List</h1>
+    <input type="text" id="taskInput" placeholder="New task">
+    <button id="addTask">Add</button>
+    <ul id="taskList"></ul>
 
     <script src="script.js"></script>
   </body>
