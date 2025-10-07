@@ -1,25 +1,26 @@
-let imgIndex = 0;
-const images = [
-  ["bloopySmug.png", "bloopy smug"],
-  ["bloopyStare.png", "bloopy stare"]
-]
+let input = document.getElementById("taskInput");
+let addButton = document.getElementById("addTask");
+let clearButton = document.getElementById("clearCompleted");
+let list = document.getElementById("taskList");
 
-function switchImage() {
-  imgIndex = (imgIndex + 1) % images.length;
-  let img = document.getElementById("bloopy");
-  img.src = images[imgIndex][0];
-  img.alt = images[imgIndex][1];
-}
+addButton.addEventListener("click", function() {
+  let taskText = input.value.trim();
+  if (taskText === "") return;
 
-function changeBgColor() {
-  let body = document.body;
-  body.classList.toggle("dark-mode");
+  let li = document.createElement("li");
+  li.textContent = taskText;
 
-  let text = document.querySelectorAll("h1, p");
-  for (const e of text) {
-    e.classList.toggle("dark-mode");
+  li.addEventListener("click", function() {
+    li.classList.toggle("done");
+  });
+
+  list.appendChild(li);
+  input.value = "";
+});
+
+clearButton.addEventListener("click", function() {
+  let doneItems = document.getElementsByClassName("done");
+  while (doneItems.length > 0) {
+    list.removeChild(doneItems[0]);
   }
-}
-
-document.getElementById("switchButton").addEventListener("click", switchImage);
-document.getElementById("colorButton").addEventListener("click", changeBgColor);
+});
