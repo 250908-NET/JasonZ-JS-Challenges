@@ -1,13 +1,10 @@
-function sayHello() {
-  alert("Hello from the external file!");
+function greetUser() {
+  let name = document.getElementById("nameInput").value;
+  if (name.trim() === "") {
+    alert("Please enter your name first!");
+  } else {
+    alert("Hello, " + name + "!");
+  }
 }
 
-let btn = document.getElementById("helloBtn");
-btn.addEventListener("click", sayHello);
-
-function sayGoodbye() {
-  alert("Goodbye from the external file!");
-}
-
-let btn2 = document.getElementById("goodbyeBtn");
-btn2.addEventListener("click", sayGoodbye);
+document.getElementById("greetBtn").addEventListener("click", greetUser);
