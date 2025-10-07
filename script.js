@@ -4,16 +4,6 @@ const images = [
   ["bloopyStare.png", "bloopy stare"]
 ]
 
-let colorIndex = 0;
-const colors = [
-  "white",
-  "cyan",
-  "pink",
-  "white",
-  "pink",
-  "cyan",
-]
-
 function switchImage() {
   imgIndex = (imgIndex + 1) % images.length;
   let img = document.getElementById("bloopy");
@@ -22,8 +12,13 @@ function switchImage() {
 }
 
 function changeBgColor() {
-  colorIndex = (colorIndex + 1) % colors.length;
-  document.body.style.backgroundColor = colors[colorIndex];
+  let body = document.body;
+  body.classList.toggle("dark-mode");
+
+  let text = document.querySelectorAll("h1, p");
+  for (const e of text) {
+    e.classList.toggle("dark-mode");
+  }
 }
 
 document.getElementById("switchButton").addEventListener("click", switchImage);
