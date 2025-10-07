@@ -1,8 +1,9 @@
 let input = document.getElementById("taskInput");
-let button = document.getElementById("addTask");
+let addButton = document.getElementById("addTask");
+let clearButton = document.getElementById("clearCompleted");
 let list = document.getElementById("taskList");
 
-button.addEventListener("click", function() {
+addButton.addEventListener("click", function() {
   let taskText = input.value.trim();
   if (taskText === "") return;
 
@@ -15,4 +16,11 @@ button.addEventListener("click", function() {
 
   list.appendChild(li);
   input.value = "";
+});
+
+clearButton.addEventListener("click", function() {
+  let doneItems = document.getElementsByClassName("done");
+  while (doneItems.length > 0) {
+    list.removeChild(doneItems[0]);
+  }
 });
