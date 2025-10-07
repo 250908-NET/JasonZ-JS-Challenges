@@ -10,8 +10,13 @@
 
     <script>
       function greetUser() {
-        let name = document.getElementById("nameInput").value;
-        alert("Hello, " + name + "!");
+        let name = document.getElementById("nameInput").value.trim();
+
+        if (name === "") {
+          alert("Please enter your name first!");
+        } else {
+          alert("Hello, " + name + "!");
+        }
       }
     </script>
   </body>
