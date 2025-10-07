@@ -25,8 +25,6 @@ clearButton.addEventListener("click", function() {
   }
 });
 
-const square = n => n * n;
+const nums = [10, 15, 20, 25, 30];
 
-const nums = [1, 2, 3, 4, 5];
-
-console.log(nums.map(square));
+console.log(nums.filter(x => x % 2 == 0));
