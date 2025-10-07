@@ -1,4 +1,4 @@
-async function main() {
+async function loadPosts() {
   let posts = await fetch("https://jsonplaceholder.typicode.com/posts").then(
     (res) => res.json()
   );
@@ -10,4 +10,4 @@ async function main() {
   });
 }
 
-main();
+document.getElementById("loadBtn").addEventListener("click", loadPosts);
